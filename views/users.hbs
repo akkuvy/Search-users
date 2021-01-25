@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="wrap">
+   <div class="search">
+       <form action="/search" method="POST">
+                 <input  style="height: 2em;" type="text" class="searchTerm" name="content" placeholder="What are you looking for?">
+      <button type="submit" class="searchButton">
+        <i  class="fa-search"></i>
+     </button>
+
+       </form>
+   </div>
+</div>
+    <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Name</th>
+      <th scope="col">location</th>
+    </tr>
+  </thead>
+  {{#each users}}
+  <tbody>
+    <tr>
+      <th scope="row">•</th>
+      <td>{{this.name}}</td>
+      <td>{{this.location}}</td>
+    </tr>
+   {{/each}}
+  </tbody>
+</table>
+
+</div>
