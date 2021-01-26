@@ -1,16 +1,15 @@
-<div class="container">
-    <div class="wrap">
-   <div class="search">
+<div class="mr-5 ml-auto">
+   <div class="search mb-5 mt-3">
        <form action="/search" method="POST">
-                 <input  style="height: 2em;" type="text" class="searchTerm" name="content" placeholder="What are you looking for?">
+                 <input  style="height: 2em;" type="text" class="searchTerm" name="content" placeholder="Search name or location">
       <button type="submit" class="searchButton">
-        <i  class="fa-search"></i>
+        search
      </button>
 
        </form>
    </div>
-</div>
-    <table class="table">
+  
+<table class="table">
   <thead class="thead-dark">
     <tr>
       <th scope="col"></th>
@@ -28,5 +27,6 @@
    {{/each}}
   </tbody>
 </table>
+    
 
 </div>

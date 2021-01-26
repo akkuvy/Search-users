@@ -15,14 +15,12 @@ router.post('/',(req,res)=>{
   })
   router.get('/users',async (req,res)=>{
     await helpers.getUsers().then((users)=>{
-
-      console.log(users);
-      res.render('users',{users})
+     res.render('users',{users})
     })
     router.post('/search',async(req,res)=>{
-      console.log(req.body);
-     await  helpers.findUser().then((result)=>{
-        response.render('/users',{})
+     console.log(req.body);
+     await  helpers.findUser(req.body).then((users)=>{
+        res.render('users',{users})
       })
     })
   

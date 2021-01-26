@@ -1,5 +1,6 @@
 var db = require("../config/connection");
 var collection = require("../config/collection");
+var objectID=require('mongodb').objectID
 
 module.exports = {
   addUsers(users) {
@@ -27,8 +28,9 @@ module.exports = {
     });
   },
   findUser(data){
+  
   return new Promise(async(resolve,reject)=>{
-      let result=await db.get().collection(collection.USERS_COLLECTION).find({name:{$regex:data}}).toArray()
+      let result=await db.get().collection(collection.USERS_COLLECTION).find({$or: [{name: {$regex: data.content,$options:'i'}}, {location: {$regex: data.content,$options:'i'}}]}).toArray()
       resolve(result)
   })
 }
